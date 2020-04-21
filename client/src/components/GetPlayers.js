@@ -1,7 +1,8 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import DisplayPlayers from './DisplayPlayers';
 import useColorSwitch from './../hooks/useColorSwitch';
+import data from './../data';
 
 class GetPlayers extends React.Component {
     constructor() {
@@ -13,13 +14,17 @@ class GetPlayers extends React.Component {
     }
 
     getUserData = () => {
-      axios
-        .get(`http://localhost:5000/api/players`)
-        .then(results => {
-        //   console.log('Results ', results.data);
-          this.setState({players: results.data}); // don't run in render() - creates loop
-        })
-        .catch(error => console.log('Error: ', error));
+    // console.log(data.data);
+    // switched from axios to loading data locally b/c Netlify wasn't deploying data
+    this.setState({players: data.data});
+    
+    //   axios
+    //     .get(`http://localhost:5000/api/players`)
+    //     .then(results => {
+    //     //   console.log('Results ', results.data);
+    //       this.setState({players: results.data}); // don't run in render() - creates loop
+    //     })
+    //     .catch(error => console.log('Error: ', error));
     }
 
     handleClick = event => {
@@ -58,7 +63,7 @@ class GetPlayers extends React.Component {
                     </div>
                     <img className='womensCup' src='https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/2019_FIFA_Women%27s_World_Cup.svg/800px-2019_FIFA_Women%27s_World_Cup.svg.png' alt='2019 Womens World Cup logo'></img>
                 </header>
-                <DisplayPlayers players={this.state.players} />
+                <DisplayPlayers players={this.state.players} key={this.state.players.id} />
             </section>
         )
     }
