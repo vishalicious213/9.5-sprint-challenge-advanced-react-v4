@@ -56,7 +56,7 @@ class GetPlayers extends React.Component {
             <section className='toggle'>
                 <header className='top'>
                     // <img className='fifaLogo' src='https://1000logos.net/wp-content/uploads/2017/01/FIFA-Logo-500x381.png' alt='FIFA logo'></img>
-                    <img className='fifaLogo' src='http://felele247.com.ng/wp-content/uploads/2020/04/FIFA-Logo-500x381.png' alt='FIFA logo'></img>
+                    <img className='fifaLogo' src='https://github.com/vishalicious213/one-off-resources/blob/master/img/FIFA-Logo-500x381.png' alt='FIFA logo'></img>
                     <div className='App-header'>
                         <h2 className='title'>Women's World Cup</h2>
                         <div className='subtitle'>2019 Player Search Rankings</div>
